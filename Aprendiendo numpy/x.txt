@@ -1,0 +1,11 @@
+ndarray.ndim
+
+ndarray.shape
+
+ndarray.size
+
+ndarray.dtype
+
+ndarray.itemsize
+
+ndarray.data
