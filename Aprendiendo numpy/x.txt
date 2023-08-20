@@ -1,1 +1,5 @@
-all, any, apply_along_axis, argmax, argmin, argsort, average, bincount, ceil, clip, conj, corrcoef, cov, cross, cumprod, cumsum, diff, dot, floor, inner, invert, lexsort, max, maximum, mean, median, min, minimum, nonzero, outer, prod, re, round, sort, std, sum, trace, transpose, var, vdot, vectorize, where
+x[1, 2, ...] es equivalente a x[1, 2, :, :, :],
+
+x[..., 3] a x[:, :, :, :, 3] y
+
+x[4, ..., 5, :] a x[4, :, :, 5, :].
