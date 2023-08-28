@@ -1,7 +1,10 @@
-If slice notation is used, the syntax start:stop:step is equivalent to np.arange(start, stop, step) inside of the brackets. However, if step is an imaginary number (i.e. 100j) then its integer portion is interpreted as a number-of-points desired and the start and stop are inclusive. In other words start:stop:stepj is interpreted as np.linspace(start, stop, step, endpoint=1) inside of the brackets. After expansion of slice notation, all comma separated sequences are concatenated together.
+**Pandas** es una biblioteca de análisis de datos de código abierto para el lenguaje de programación **Python**. Fue creada por Wes McKinney en 2008 y se ha convertido en una herramienta popular para el análisis y manipulación de datos. La biblioteca proporciona estructuras de datos flexibles y de alto rendimiento diseñadas para facilitar el trabajo con datos estructurados, como hojas de cálculo, tablas SQL o bases de datos NoSQL. 
 
-Optional character strings placed as the first element of the index expression can be used to change the output. The strings ‘r’ or ‘c’ result in matrix output. If the result is 1-D and ‘r’ is specified a 1 x N (row) matrix is produced. If the result is 1-D and ‘c’ is specified, then a N x 1 (column) matrix is produced. If the result is 2-D then both provide the same matrix result.
+Pandas es una herramienta muy útil para la limpieza, transformación y análisis de datos. Algunas de las características que ofrece son:
 
-A string integer specifies which axis to stack multiple comma separated arrays along. A string of two comma-separated integers allows indication of the minimum number of dimensions to force each entry into as the second integer (the axis to concatenate along is still the first integer).
-
-A string with three comma-separated integers allows specification of the axis to concatenate along, the minimum number of dimensions to force the entries to, and which axis should contain the start of the arrays which are less than the specified number of dimensions. In other words the third integer allows you to specify where the 1’s should be placed in the shape of the arrays that have their shapes upgraded. By default, they are placed in the front of the shape tuple. The third argument allows you to specify where the start of the array should be instead. Thus, a third argument of ‘0’ would place the 1’s at the end of the array shape. Negative integers specify where in the new shape tuple the last dimension of upgraded arrays should be placed, so the default is ‘-1’.
+- Lectura y escritura de datos en diferentes formatos: CSV, Excel, SQL, JSON, HTML, entre otros.
+- Selección, filtrado y transformación de datos.
+- Combinación y unión de conjuntos de datos.
+- Manejo de valores faltantes.
+- Agrupación y agregación de datos.
+- Visualización de datos.
