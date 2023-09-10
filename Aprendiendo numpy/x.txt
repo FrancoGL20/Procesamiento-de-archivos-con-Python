@@ -1,0 +1,58 @@
+s = pd.Series(np.arange(10))
+
+s
+Out[30]: 
+0    0
+1    1
+2    2
+3    3
+4    4
+5    5
+6    6
+7    7
+8    8
+9    9
+dtype: int64
+
+div, rem = divmod(s, 3)
+
+div
+Out[32]: 
+0    0
+1    0
+2    0
+3    1
+4    1
+5    1
+6    2
+7    2
+8    2
+9    3
+dtype: int64
+
+rem
+Out[33]: 
+0    0
+1    1
+2    2
+3    0
+4    1
+5    2
+6    0
+7    1
+8    2
+9    0
+dtype: int64
+
+idx = pd.Index(np.arange(10))
+
+idx
+Out[35]: Index([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype='int64')
+
+div, rem = divmod(idx, 3)
+
+div
+Out[37]: Index([0, 0, 0, 1, 1, 1, 2, 2, 2, 3], dtype='int64')
+
+rem
+Out[38]: Index([0, 1, 2, 0, 1, 2, 0, 1, 2, 0], dtype='int64')
