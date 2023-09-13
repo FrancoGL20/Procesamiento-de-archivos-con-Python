@@ -1,58 +1,27 @@
-s = pd.Series(np.arange(10))
+Parameters
 
-s
-Out[30]: 
-0    0
-1    1
-2    2
-3    3
-4    4
-5    5
-6    6
-7    7
-8    8
-9    9
-dtype: int64
+- **axis**: {0 or ‘index’, 1 or ‘columns’, None}, default 0
+	
+	Indicate which axis or axes should be reduced. For Series this parameter is unused and defaults to 0.
 
-div, rem = divmod(s, 3)
+0 / ‘index’ : reduce the index, return a Series whose index is the original column labels.
 
-div
-Out[32]: 
-0    0
-1    0
-2    0
-3    1
-4    1
-5    1
-6    2
-7    2
-8    2
-9    3
-dtype: int64
+1 / ‘columns’ : reduce the columns, return a Series whose index is the original index.
 
-rem
-Out[33]: 
-0    0
-1    1
-2    2
-3    0
-4    1
-5    2
-6    0
-7    1
-8    2
-9    0
-dtype: int64
+None : reduce all axes, return a scalar.
 
-idx = pd.Index(np.arange(10))
+- **bool_only**: bool, default False
+	
+	Include only boolean columns. Not implemented for Series.
 
-idx
-Out[35]: Index([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype='int64')
+- **skipna**: bool, default True
+	
+	Exclude NA/null values. If the entire row/column is NA and skipna is True, then the result will be True, as for an empty row/column. If skipna is False, then NA are treated as True, because these are not equal to zero.
 
-div, rem = divmod(idx, 3)
+- ****kwargs**: any, default None
+	
+	Additional keywords have no effect but might be accepted for compatibility with NumPy.
 
-div
-Out[37]: Index([0, 0, 0, 1, 1, 1, 2, 2, 2, 3], dtype='int64')
-
-rem
-Out[38]: Index([0, 1, 2, 0, 1, 2, 0, 1, 2, 0], dtype='int64')
+- **Returns**: Series or DataFrame
+	
+	If level is specified, then, DataFrame is returned; otherwise, Series is returned.
