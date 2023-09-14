@@ -1,9 +1,9 @@
 Parameters
 
-- **other**: Series or DataFrame
+- **other**: DataFrame
 	
-	The other Series or DataFrame to be compared with the first.
+	Provided DataFrame to use to fill null values.
 
-- **Returns**: bool
+- **Returns**: DataFrame
 	
-	True if all elements are the same in both objects, False otherwise.
+	The result of combining the provided DataFrame with the other object.
