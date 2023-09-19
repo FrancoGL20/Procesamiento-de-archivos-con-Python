@@ -2,8 +2,20 @@ Parameters
 
 - **other**: DataFrame
 	
-	Provided DataFrame to use to fill null values.
+	The DataFrame to merge column-wise.
+
+- **func**: function
+	
+	Function that takes two series as inputs and return a Series or a scalar. Used to merge the two dataframes column by columns.
+
+- **fill_value**: scalar value, default None
+	
+	The value to fill NaNs with prior to passing any column to the merge func.
+
+- **overwrite**: bool, default True
+	
+	If True, columns in self that do not exist in other will be overwritten with NaNs.
 
 - **Returns**: DataFrame
 	
-	The result of combining the provided DataFrame with the other object.
+	Combination of the provided DataFrames.
