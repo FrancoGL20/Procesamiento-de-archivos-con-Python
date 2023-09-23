@@ -1,1 +1,13 @@
-count()sum()mean()median()min()max()mode()abs()prod()std()var()sem()skew()kurt()quantile()cumsum()cumprod()cummax()cummin
+Entity.LoadAt.LoadAtCode
+Entity.LoadAt.LoadAtDescription
+Entity.LoadAt.DivisionCode
+Entity.LoadAt.LogisticsGroupCode
+Entity.LoadAt.IgnoreEquipmentFlag
+Entity.LoadAt.Address.Street
+Entity.LoadAt.Address.AddressNotes
+Entity.LoadAt.Address.CountryCode
+Entity.LoadAt.Address.State
+Entity.LoadAt.Address.City
+Entity.LoadAt.Address.PostalCode
+Entity.LoadAt.Address.Latitude
+Entity.LoadAt.Address.Longitude
