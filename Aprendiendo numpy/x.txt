@@ -1,17 +1,33 @@
-Parameters
+Parameters:
 
-- **func**: function
+- **func**: function, str, list-like or dict-like
 	
-	Function to apply to the Series/DataFrame. args, and kwargs are passed into func. Alternatively a (callable, data_keyword) tuple where data_keyword is a string indicating the keyword of callable that expects the Series/DataFrame.
+	Function to use for transforming the data. If a function, must either work when passed a DataFrame or when passed to DataFrame.apply. If func is both list-like and dict-like, dict-like behavior takes precedence.
 
-- ***args**: iterable, optional
-	
-	Positional arguments passed into func.
+Accepted combinations are:
 
-- ****kwargs**: mapping, optional
-	
-	A dictionary of keyword arguments passed into func.
+function
 
-- **Returns**: the return type of
+string function name
+
+list-like of functions and/or function names, e.g. [np.exp, 'sqrt']
+
+dict-like of axis labels -> functions, function names or list-like of such.
+
+- **axis**: {0 or ‘index’, 1 or ‘columns’}, default 0
 	
-	func
+	If 0 or ‘index’: apply function to each column. If 1 or ‘columns’: apply function to each row.
+
+*args
+Positional arguments to pass to func.
+
+**kwargs
+Keyword arguments to pass to func.
+
+- **Returns:**: DataFrame
+	
+	A DataFrame that must have the same length as self.
+
+- **Raises:**: ValueError
+	
+	If the returned DataFrame has a different length than self.
