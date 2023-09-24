@@ -1,13 +1,17 @@
-Entity.LoadAt.LoadAtCode
-Entity.LoadAt.LoadAtDescription
-Entity.LoadAt.DivisionCode
-Entity.LoadAt.LogisticsGroupCode
-Entity.LoadAt.IgnoreEquipmentFlag
-Entity.LoadAt.Address.Street
-Entity.LoadAt.Address.AddressNotes
-Entity.LoadAt.Address.CountryCode
-Entity.LoadAt.Address.State
-Entity.LoadAt.Address.City
-Entity.LoadAt.Address.PostalCode
-Entity.LoadAt.Address.Latitude
-Entity.LoadAt.Address.Longitude
+Parameters
+
+- **func**: function
+	
+	Function to apply to the Series/DataFrame. args, and kwargs are passed into func. Alternatively a (callable, data_keyword) tuple where data_keyword is a string indicating the keyword of callable that expects the Series/DataFrame.
+
+- ***args**: iterable, optional
+	
+	Positional arguments passed into func.
+
+- ****kwargs**: mapping, optional
+	
+	A dictionary of keyword arguments passed into func.
+
+- **Returns**: the return type of
+	
+	func
