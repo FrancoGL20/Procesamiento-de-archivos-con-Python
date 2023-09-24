@@ -1,33 +1,16 @@
-Parameters:
+Parameters
 
-- **func**: function, str, list-like or dict-like
+- **func**: callable
 	
-	Function to use for transforming the data. If a function, must either work when passed a DataFrame or when passed to DataFrame.apply. If func is both list-like and dict-like, dict-like behavior takes precedence.
+	Python function, returns a single value from a single value.
 
-Accepted combinations are:
-
-function
-
-string function name
-
-list-like of functions and/or function names, e.g. [np.exp, 'sqrt']
-
-dict-like of axis labels -> functions, function names or list-like of such.
-
-- **axis**: {0 or ‘index’, 1 or ‘columns’}, default 0
+- **na_action**: {None, ‘ignore’}, default None
 	
-	If 0 or ‘index’: apply function to each column. If 1 or ‘columns’: apply function to each row.
-
-*args
-Positional arguments to pass to func.
+	If ‘ignore’, propagate NaN values, without passing them to func.
 
 **kwargs
-Keyword arguments to pass to func.
+Additional keyword arguments to pass as keywords arguments to func.
 
-- **Returns:**: DataFrame
+- **Returns**: DataFrame
 	
-	A DataFrame that must have the same length as self.
-
-- **Raises:**: ValueError
-	
-	If the returned DataFrame has a different length than self.
+	Transformed DataFrame.
