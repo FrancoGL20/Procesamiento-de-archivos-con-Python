@@ -1,16 +1,13 @@
 Parameters
 
-- **func**: callable
+- **arg**: function, collections.abc.Mapping subclass or Series
 	
-	Python function, returns a single value from a single value.
+	Mapping correspondence.
 
 - **na_action**: {None, ‘ignore’}, default None
 	
-	If ‘ignore’, propagate NaN values, without passing them to func.
+	If ‘ignore’, propagate NaN values, without passing them to the mapping correspondence.
 
-**kwargs
-Additional keyword arguments to pass as keywords arguments to func.
-
-- **Returns**: DataFrame
+- **Returns**: Series
 	
-	Transformed DataFrame.
+	Same index as caller.
