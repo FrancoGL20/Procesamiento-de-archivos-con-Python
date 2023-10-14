@@ -1,35 +1,25 @@
-Parameters:
+Parameters
 
-- **other**: DataFrame or Series
+- **keys**: label or array-like or list of labels/arrays
 	
-	join{‘outer’, ‘inner’, ‘left’, ‘right’}, default ‘outer’
-Type of alignment to be performed.
+	This parameter can be either a single column key, a single array of the same length as the calling DataFrame, or a list containing an arbitrary combination of column keys and arrays. Here, “array” encompasses Series, Index, np.ndarray, and instances of Iterator.
 
-left: use only keys from left frame, preserve key order.
-
-right: use only keys from right frame, preserve key order.
-
-outer: use union of keys from both frames, sort keys lexicographically.
-
-inner: use intersection of keys from both frames, preserve the order of the left keys.
-
-- **axis**: allowed axis of the other object, default None
+- **drop**: bool, default True
 	
-	Align on index (0), columns (1), or both (None).
+	Delete columns to be used as the new index.
 
-- **level**: int or level name, default None
+- **append**: bool, default False
 	
-	Broadcast across a level, matching Index values on the passed MultiIndex level.
+	Whether to append columns to existing index.
 
-- **copy**: bool, default True
+- **inplace**: bool, default False
 	
-	Always returns new objects. If copy=False and no reindexing is required then original objects are returned.
+	Whether to modify the DataFrame rather than creating a new one.
 
-- **fill_value**: scalar, default np.nan
+- **verify_integrity**: bool, default False
 	
-	Value to use for missing values. Defaults to NaN, but can be any “compatible” value.
+	Check the new index for duplicates. Otherwise defer the check until necessary. Setting to False will improve the performance of this method.
 
-
-- **Returns:**: tuple of (Series/DataFrame, type of other)
+- **Returns**: DataFrame or None
 	
-	Aligned objects.
+	Changed row labels or None if inplace=True.
