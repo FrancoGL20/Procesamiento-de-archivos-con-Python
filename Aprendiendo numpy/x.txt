@@ -1,41 +1,9 @@
-Parameters
+Yields
 
-- **mapper**: dict-like or function
+- **index**: label or tuple of label
 	
-	Dict-like or function transformations to apply to that axis’ values. Use either mapper and axis to specify the axis to target with mapper, or index and columns.
+	The index of the row. A tuple for a MultiIndex.
 
-- **index**: dict-like or function
+- **data**: Series
 	
-	Alternative to specifying axis (mapper, axis=0 is equivalent to index=mapper).
-
-- **columns**: dict-like or function
-	
-	Alternative to specifying axis (mapper, axis=1 is equivalent to columns=mapper).
-
-- **axis**: {0 or ‘index’, 1 or ‘columns’}, default 0
-	
-	Axis to target with mapper. Can be either the axis name (‘index’, ‘columns’) or number (0, 1). The default is ‘index’.
-
-- **copy**: bool, default True
-	
-	Also copy underlying data.
-
-- **inplace**: bool, default False
-	
-	Whether to modify the DataFrame rather than creating a new one. If True then value of copy is ignored.
-
-- **level**: int or level name, default None
-	
-	In case of a MultiIndex, only rename labels in the specified level.
-
-- **errors**: {‘ignore’, ‘raise’}, default ‘ignore’
-	
-	If ‘raise’, raise a KeyError when a dict-like mapper, index, or columns contains labels that are not present in the Index being transformed. If ‘ignore’, existing keys will be renamed and extra keys will be ignored.
-
-- **Returns**: DataFrame or None
-	
-	DataFrame with the renamed axis labels or None if inplace=True.
-
-- **Raises**: KeyError
-	
-	If any of the labels is not found in the selected axis and “errors=’raise’”.
+	The data of the row as a Series.
