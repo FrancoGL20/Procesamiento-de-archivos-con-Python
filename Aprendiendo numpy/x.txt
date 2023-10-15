@@ -1,9 +1,13 @@
-Yields
+Parameters
 
-- **index**: label or tuple of label
+- **index**: bool, default True
 	
-	The index of the row. A tuple for a MultiIndex.
+	If True, return the index as the first element of the tuple.
 
-- **data**: Series
+- **name**: str or None, default “Pandas”
 	
-	The data of the row as a Series.
+	The name of the returned namedtuples or None to return regular tuples.
+
+- **Returns**: iterator
+	
+	An object to iterate over namedtuples for each row in the DataFrame with the first field possibly being the index and following fields being the column values.
