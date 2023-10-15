@@ -1,25 +1,41 @@
 Parameters
 
-- **keys**: label or array-like or list of labels/arrays
+- **mapper**: dict-like or function
 	
-	This parameter can be either a single column key, a single array of the same length as the calling DataFrame, or a list containing an arbitrary combination of column keys and arrays. Here, “array” encompasses Series, Index, np.ndarray, and instances of Iterator.
+	Dict-like or function transformations to apply to that axis’ values. Use either mapper and axis to specify the axis to target with mapper, or index and columns.
 
-- **drop**: bool, default True
+- **index**: dict-like or function
 	
-	Delete columns to be used as the new index.
+	Alternative to specifying axis (mapper, axis=0 is equivalent to index=mapper).
 
-- **append**: bool, default False
+- **columns**: dict-like or function
 	
-	Whether to append columns to existing index.
+	Alternative to specifying axis (mapper, axis=1 is equivalent to columns=mapper).
+
+- **axis**: {0 or ‘index’, 1 or ‘columns’}, default 0
+	
+	Axis to target with mapper. Can be either the axis name (‘index’, ‘columns’) or number (0, 1). The default is ‘index’.
+
+- **copy**: bool, default True
+	
+	Also copy underlying data.
 
 - **inplace**: bool, default False
 	
-	Whether to modify the DataFrame rather than creating a new one.
+	Whether to modify the DataFrame rather than creating a new one. If True then value of copy is ignored.
 
-- **verify_integrity**: bool, default False
+- **level**: int or level name, default None
 	
-	Check the new index for duplicates. Otherwise defer the check until necessary. Setting to False will improve the performance of this method.
+	In case of a MultiIndex, only rename labels in the specified level.
+
+- **errors**: {‘ignore’, ‘raise’}, default ‘ignore’
+	
+	If ‘raise’, raise a KeyError when a dict-like mapper, index, or columns contains labels that are not present in the Index being transformed. If ‘ignore’, existing keys will be renamed and extra keys will be ignored.
 
 - **Returns**: DataFrame or None
 	
-	Changed row labels or None if inplace=True.
+	DataFrame with the renamed axis labels or None if inplace=True.
+
+- **Raises**: KeyError
+	
+	If any of the labels is not found in the selected axis and “errors=’raise’”.
